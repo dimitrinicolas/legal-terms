@@ -21,9 +21,9 @@ class LangPreview extends React.Component {
         );
     }
     return (
-      <div>
+      <div className="lang-preview">
         <h2>{this.props.name}</h2>
-        <ul>{categoriesList}</ul>
+        <ul class="lang-preview__main-list">{categoriesList}</ul>
       </div>
     );
   }

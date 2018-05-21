@@ -3,7 +3,24 @@
 
 html,
 body {
-  background-color: #f5f5f5;
+  background-color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: #1f1cd2;
+  transition: .12s;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: black;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.6;
 }
 
 .container {
@@ -20,21 +37,42 @@ body {
   }
 }
 
+.lang-preview {
+  margin: 40px 0;
+}
+.lang-preview__main-list {
+  list-style: none;
+  padding: 0;
+}
+.lang-preview__main-list > li {
+  font-weight: 500;
+}
+.lang-preview__main-list > li > ul {
+  list-style-type: disc;
+}
+.lang-preview__main-list > li > ul > li {
+  margin: 8px 0;
+  font-weight: 400;
+}
+
 .page {
-  max-width: 700px;
+  max-width: 650px;
   margin: 30px auto;
   padding: 40px 40px;
   background-color: white;
-  line-height: 1.6;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, .1);
+  line-height: 1.7;
+  border: 1px solid #ebebeb;
+  /* box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, .1); */
+}
+@media (max-width: 600px) {
+  .page {
+    padding: 30px 20px;
+  }
 }
 
 .editable {
   position: relative;
-  outline: 1px solid yellow;
-}
-.editable.editable--edited {
-  outline-color: #ffffc8;
+  outline: 0px solid #ffe5d9;
 }
 .editable span {
   position: relative;
@@ -47,17 +85,19 @@ body {
   font-size: 16px;
   font-weight: normal;
   color: black;
-  line-height: 1.5;
-  word-wrap: break-word;
-  text-align: center;
-  background: yellow;
+  line-height: 1.7;
+  background: #ffe5d9;
   outline-offset: 2px;
 }
 .editable span:focus {
-  outline: 3px solid orange;
+  z-index: 2;
+  outline: 3px solid #ffa500;
+}
+.editable.editable--edited {
+  outline-color: #fdf7f5;
 }
 .editable.editable--edited span {
-  background: #ffffc8;
+  background: #fdf7f5;
 }
 .editable span::selection {
 }
@@ -80,10 +120,11 @@ body {
 .nav {
   margin-top: 50px;
 }
-.nav hr.hr {
+.nav .hr {
   display: inline-block;
-  size: 10px 1px;
-  margin: 0 10px;
+  width: 8px;
+  height: 1px;
+  margin: 0 8px 4px 8px;
   border: none;
   background: black;
 }

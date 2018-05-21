@@ -35,7 +35,13 @@
             { to: '/' },
             'Home'
           ),
-          React$1.createElement('hr', { className: 'hr' }),
+          React$1.createElement('span', { className: 'hr' }),
+          React$1.createElement(
+            'a',
+            { href: 'https://github.com/dimitrinicolas/legal-terms' },
+            'Github repository'
+          ),
+          React$1.createElement('span', { className: 'hr' }),
           React$1.createElement(
             reactRouterDom.Link,
             { to: '/legal-terms-disclaimer' },
@@ -139,7 +145,7 @@
 
         return React$1.createElement(
           'div',
-          null,
+          { className: 'lang-preview' },
           React$1.createElement(
             'h2',
             null,
@@ -147,7 +153,7 @@
           ),
           React$1.createElement(
             'ul',
-            null,
+            { 'class': 'lang-preview__main-list' },
             categoriesList
           )
         );
@@ -250,11 +256,7 @@
             null,
             'Legal Terms and Disclaimer'
           ),
-          React$1.createElement(
-            'p',
-            null,
-            'Lorem Ipsum'
-          ),
+          React$1.createElement('p', null),
           React$1.createElement(
             'h2',
             null,
@@ -1546,10 +1548,6 @@
 
   var _createClass$4 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  function _possibleConstructorReturn$4(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits$4(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
   function _classCallCheck$4(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   var Editor = function () {
@@ -1577,19 +1575,34 @@
             var el = _step.value;
 
             el.className = 'editable';
-            var code = el.getAttribute('data-code');
+            var split = el.getAttribute('data-code').split('|');
+            var code = split[0];
+            el.setAttribute('data-code', code);
+            split.shift();
+            var options = {};
+            for (var i = 0; i < split.length; i++) {
+              var opt = split[i].split(':');
+              if (opt[0]) {
+                options[opt[0]] = opt[1] || true;
+              }
+            }
             var span = document.createElement('span');
-            span.innerHTML = el.innerHTML.replace('\n', '<br>');
+            span.innerHTML = code.replace('\n', '<br>');
             span.setAttribute('contenteditable', true);
             el.innerHTML = '';
             el.appendChild(span);
             if (!this.values[code]) {
               this.values[code] = {
                 value: code,
-                els: []
+                els: [],
+                options: {}
               };
             }
             this.values[code].els.push(el);
+            this.values.options = Object.assign(this.values[code].options, options);
+            if (this.values[code].options.type) {
+              span.setAttribute('type', this.values[code].options.type);
+            }
             span.addEventListener('focus', function (event) {
               setTimeout(function () {
                 document.execCommand('selectAll', false, null);
@@ -1671,11 +1684,21 @@
     return Editor;
   }();
 
+  var _createClass$5 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  function _classCallCheck$5(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn$4(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits$4(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var templatesIncrementId = 0;
+
   var Template = function (_React$Component) {
     _inherits$4(Template, _React$Component);
 
     function Template() {
-      _classCallCheck$4(this, Template);
+      _classCallCheck$5(this, Template);
 
       var _this = _possibleConstructorReturn$4(this, (Template.__proto__ || Object.getPrototypeOf(Template)).call(this));
 
@@ -1686,10 +1709,11 @@
       return _this;
     }
 
-    _createClass$4(Template, [{
+    _createClass$5(Template, [{
       key: 'componentWillMount',
       value: function componentWillMount() {
-        this.randomId = Math.random();
+        this.id = 'templatesReactId' + templatesIncrementId;
+        templatesIncrementId++;
       }
     }, {
       key: 'render',
@@ -1708,20 +1732,20 @@
             { to: '/' },
             'Return to home'
           ),
-          React$1.createElement('div', { id: this.randomId, className: 'page markdown-body' })
+          React$1.createElement('div', { id: this.id, className: 'page markdown-body' })
         );
       }
     }, {
       key: 'componentDidMount',
       value: function componentDidMount() {
-        new Editor(this.props.content, document.getElementById(this.randomId));
+        new Editor(this.props.content, document.getElementById(this.id));
       }
     }]);
 
     return Template;
   }(React$1.Component);
 
-  var siteVitrine = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : {{URL}} les informations suivantes :\n\n### Informations légales\n\nSociété : {{Société}}  \nStatut : {{Statut}}  \nAdresse : {{Adresse}}  \nTéléphone : {{Téléphone}}  \nSIRET :  {{SIRET}}  \nR.C.S. : {{R.C.S.}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et adresse}}\n\n## Description des services fournis\n\nLe site {{URL}} a pour objet de fournir une information concernant l’ensemble des activités de la société.  \nLe proprietaire du site s’efforce de fournir sur le site {{URL}} des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.\n\nTous les informations proposées sur le site {{URL}} sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site {{URL}}, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Les données obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de supperssion et d'opposition de ses données personnelles.\n";
+  var siteVitrine = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : {{URL (exemple.fr)|type:url}} les informations suivantes :\n\n### Informations légales\n\nSociété : {{Nom de la société}}  \nStatut : {{Statut (ex : SAS au capital de ...)}}  \nAdresse : {{Adresse de l'établissement ou du siège social}}  \nContact : {{Adresse email et numéro de téléphone}}  \nSIRET :  {{SIRET|type:number}}  \nRCS : {{RCS si l'entreprise a une activité commerciale}}  \nNuméro de TVA : {{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  \nRM : {{RM si l'entreprise a une activité artisanale}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et son adresse}}\n\n## Description des services fournis\n\nLe site {{URL (exemple.fr)}} a pour objet de fournir une information concernant l’ensemble des activités de la société.  \nLe proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.\n\nTous les informations proposées sur le site {{URL (exemple.fr)}} sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site {{URL (exemple.fr)}}, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Les données obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de supperssion et d'opposition de ses données personnelles.\n";
 
   var fr = {
     code: 'fr',
@@ -1844,7 +1868,7 @@
     null,
     React.createElement(
       'div',
-      { className: 'container markdown-body' },
+      { className: 'container' },
       React.createElement(
         reactRouterDom.Switch,
         null,

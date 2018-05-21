@@ -8,7 +8,7 @@ class LegalTermsDisclaimer extends React.Component {
 
         <h1>Legal Terms and Disclaimer</h1>
         <p>
-          Lorem Ipsum
+          
         </p>
 
         <h2>Disclaimer</h2>

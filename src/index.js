@@ -23,7 +23,7 @@ for (let lang of templates.langs) {
 
 ReactDOM.render((
   <HashRouter>
-    <div className="container markdown-body">
+    <div className="container">
       <Switch>
         <Route exact path="/" component={()=><Home templates={templates} />} />
         <Route exact path="/legal-terms-disclaimer" component={LegalTermsDisclaimer} />
