@@ -1060,6 +1060,10 @@ p {
   line-height: 1.6;
 }
 
+.description {
+  font-size: 19px;
+}
+
 .container {
   box-sizing: border-box;
   max-width: 850px;

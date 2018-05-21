@@ -1,4 +1,5 @@
-import siteVitrine from './mentions-legales/site-vitrine.md';
+import siteVitrineSociete from './mentions-legales/site-vitrine-societe.md';
+import siteVitrineIndividuelle from './mentions-legales/site-vitrine-individuelle.md';
 
 let fr = {
   code: 'fr',
@@ -10,9 +11,16 @@ let fr = {
       description: 'Description des mentions légales',
       templates: [
         {
-          code: 'site-vitrine',
-          name: 'Site vitrine d\'une entreprise',
-          content: siteVitrine
+          code: 'site-vitrine-societe',
+          name: 'Site vitrine d\'une société',
+          description: 'Mentions légales obligatoires pour le site vitrine d\'une société.',
+          content: siteVitrineSociete
+        },
+        {
+          code: 'site-vitrine-individuelle',
+          name: 'Site vitrine d\'une entreprise individuelle',
+          description: 'Mentions légales obligatoires pour le site vitrine d\'une entreprise individuelle (AE, EI, EIRL...).',
+          content: siteVitrineIndividuelle
         }
       ]
     }

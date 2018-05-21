@@ -21,6 +21,7 @@ class Template extends React.Component {
     return (
       <div>
         <h1>Template of: {this.props.name}</h1>
+        <p className="description">{this.props.description}</p>
         <nav className="nav">
           <Link to="/">Return to home</Link>
           <span className="hr"></span>

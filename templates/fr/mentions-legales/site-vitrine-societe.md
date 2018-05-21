@@ -7,7 +7,7 @@ Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 d
 Société : {{Nom de la société}}  
 Statut : {{Statut (ex : SAS au capital de ...)}}  
 Adresse : {{Adresse de l'établissement ou du siège social}}  
-Contact : {{Adresse email et numéro de téléphone}}  
+Contact : {{Adresse e-mail et numéro de téléphone}}  
 SIRET :  {{SIRET|type:number}}  
 RCS : {{RCS si l'entreprise a une activité commerciale}}  
 Numéro de TVA : {{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  

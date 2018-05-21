@@ -5,9 +5,9 @@ import Nav from './components/nav';
 import Home from './views/home.js';
 import LegalTermsDisclaimer from './views/legal-terms-disclaimer.js';
 import Template from './views/template.js';
+import Page404 from './views/page404.js';
 
 import templates from '../templates/index.js';
-console.log(templates);
 
 let templatesRoutes = [];
 
@@ -28,7 +28,7 @@ ReactDOM.render((
         <Route exact path="/" component={()=><Home templates={templates} />} />
         <Route exact path="/legal-terms-disclaimer" component={LegalTermsDisclaimer} />
         {templatesRoutes}
-        <Route component={()=><div>404</div>} />
+        <Route component={Page404} />
       </Switch>
       <Nav />
     </div>
