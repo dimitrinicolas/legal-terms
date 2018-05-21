@@ -18,7 +18,8 @@ Hébergeur du site : {{Hébergeur et son adresse}}
 
 ## Description des services fournis
 
-Le site {{URL (exemple.fr)}} a pour objet de fournir une information concernant l’ensemble des activités de la société.  
+Le site {{URL (exemple.fr)}} a pour objet de fournir une information concernant l’ensemble des activités de la société.
+
 Le proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
 
 Tous les informations proposées sur le site {{URL (exemple.fr)}} sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.
@@ -36,4 +37,4 @@ L’utilisateur est informé que lors de ses visites sur le site {{URL (exemple.
 
 Le site assure à l'utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.
 
-En vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de supperssion et d'opposition de ses données personnelles.
+En vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles.

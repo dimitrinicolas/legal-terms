@@ -25,13 +25,12 @@ p {
 
 .container {
   box-sizing: border-box;
-  min-width: 200px;
-  max-width: 980px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 45px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .container {
     padding: 15px;
   }
@@ -56,7 +55,6 @@ p {
 }
 
 .page {
-  max-width: 650px;
   margin: 30px auto;
   padding: 40px 40px;
   background-color: white;
@@ -118,6 +116,8 @@ p {
 }
 
 .nav {
+}
+.nav.nav--footer {
   margin-top: 50px;
 }
 .nav .hr {

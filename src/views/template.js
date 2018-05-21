@@ -21,7 +21,11 @@ class Template extends React.Component {
     return (
       <div>
         <h1>Template of: {this.props.name}</h1>
-        <Link to="/">Return to home</Link>
+        <nav className="nav">
+          <Link to="/">Return to home</Link>
+          <span className="hr"></span>
+          <a href="https://github.com/dimitrinicolas/legal-terms#contributing">Contribute on Github</a>
+        </nav>
         <div id={this.id} className="page markdown-body"></div>
       </div>
     );
