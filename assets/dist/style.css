@@ -1046,6 +1046,7 @@ body {
 
 a {
   color: #1f1cd2;
+  -webkit-transition: .12s;
   transition: .12s;
   text-decoration: none;
 }
@@ -1099,7 +1100,6 @@ p {
   background-color: white;
   line-height: 1.7;
   border: 1px solid #ebebeb;
-  /* box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, .1); */
 }
 
 .editable {
@@ -1136,12 +1136,6 @@ p {
   background: #fdf7f5;
 }
 
-.editable span::-moz-selection {
-}
-
-.editable span::selection {
-}
-
 .loading-spinner {
   position: absolute;
   top: 50%;
@@ -1156,13 +1150,13 @@ p {
 }
 
 @-webkit-keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .nav {

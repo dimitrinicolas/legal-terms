@@ -2,9 +2,9 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-router-dom'), require('react-dom')) :
   typeof define === 'function' && define.amd ? define(['react', 'react-router-dom', 'react-dom'], factory) :
   (factory(global.React,global.ReactRouterDOM,global.ReactDOM));
-}(this, (function (React$1,reactRouterDom,ReactDOM) { 'use strict';
+}(this, (function (React,reactRouterDom,ReactDOM) { 'use strict';
 
-  React$1 = React$1 && React$1.hasOwnProperty('default') ? React$1['default'] : React$1;
+  React = React && React.hasOwnProperty('default') ? React['default'] : React;
   ReactDOM = ReactDOM && ReactDOM.hasOwnProperty('default') ? ReactDOM['default'] : ReactDOM;
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27,16 +27,16 @@
     _createClass(Nav, [{
       key: 'render',
       value: function render() {
-        return React$1.createElement(
+        return React.createElement(
           'nav',
           { className: 'nav nav--footer' },
-          React$1.createElement(
+          React.createElement(
             'a',
             { href: 'https://github.com/dimitrinicolas/legal-terms' },
             'Github repository'
           ),
-          React$1.createElement('span', { className: 'hr' }),
-          React$1.createElement(
+          React.createElement('span', { className: 'hr' }),
+          React.createElement(
             reactRouterDom.Link,
             { to: '/legal-terms-disclaimer' },
             'Legal Terms and Disclaimer'
@@ -46,7 +46,7 @@
     }]);
 
     return Nav;
-  }(React$1.Component);
+  }(React.Component);
 
   var _createClass$1 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -86,10 +86,10 @@
               for (var _iterator2 = categorie.templates[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                 var template = _step2.value;
 
-                templatesList.push(React$1.createElement(
+                templatesList.push(React.createElement(
                   'li',
                   { key: template.code },
-                  React$1.createElement(
+                  React.createElement(
                     reactRouterDom.Link,
                     { to: this.props.code + '/' + categorie.code + '/' + template.code },
                     template.name
@@ -111,11 +111,11 @@
               }
             }
 
-            categoriesList.push(React$1.createElement(
+            categoriesList.push(React.createElement(
               'li',
               { key: categorie.code },
               categorie.name,
-              React$1.createElement(
+              React.createElement(
                 'ul',
                 null,
                 templatesList
@@ -137,17 +137,17 @@
           }
         }
 
-        return React$1.createElement(
+        return React.createElement(
           'div',
           { className: 'lang-preview' },
-          React$1.createElement(
+          React.createElement(
             'h2',
             null,
             this.props.name
           ),
-          React$1.createElement(
+          React.createElement(
             'ul',
-            { 'class': 'lang-preview__main-list' },
+            { className: 'lang-preview__main-list' },
             categoriesList
           )
         );
@@ -155,7 +155,7 @@
     }]);
 
     return LangPreview;
-  }(React$1.Component);
+  }(React.Component);
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -189,7 +189,7 @@
           for (var _iterator = templates.langs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var lang = _step.value;
 
-            langsList.push(React$1.createElement(LangPreview, _extends({ key: lang.code }, lang)));
+            langsList.push(React.createElement(LangPreview, _extends({ key: lang.code }, lang)));
           }
         } catch (err) {
           _didIteratorError = true;
@@ -206,10 +206,10 @@
           }
         }
 
-        return React$1.createElement(
+        return React.createElement(
           'div',
           null,
-          React$1.createElement(
+          React.createElement(
             'h1',
             null,
             'Open source Legal Notices and Terms templates'
@@ -220,7 +220,7 @@
     }]);
 
     return Home;
-  }(React$1.Component);
+  }(React.Component);
 
   var _createClass$3 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -242,39 +242,39 @@
     _createClass$3(LegalTermsDisclaimer, [{
       key: 'render',
       value: function render() {
-        return React$1.createElement(
+        return React.createElement(
           'div',
           null,
-          React$1.createElement(
+          React.createElement(
             'h1',
             null,
             'Legal Terms and Disclaimer'
           ),
-          React$1.createElement(
+          React.createElement(
             'nav',
             { className: 'nav' },
-            React$1.createElement(
+            React.createElement(
               reactRouterDom.Link,
               { to: '/' },
               'Return to home'
             )
           ),
-          React$1.createElement(
+          React.createElement(
             'p',
             null,
-            'The information is provided "as is" without warranty of any kind. None of the authors accept any responsibility or liability for the accuracy, content, completeness, legality, or reliability of the informations provided by this website. No warranties, promises and/or representations of any kind, expressed or implied, are given as to the nature, standard, accuracy or otherwise of the information provided in this website nor to the suitability or otherwise of the information to your particular circumstances.'
+            '\n              The information is provided "as is" without warranty of any kind. \n              None of the authors accept any responsibility or liability for \n              the accuracy, content, completeness, legality, or reliability of \n              the informations provided by this website. No warranties, \n              promises and/or representations of any kind, expressed or \n              implied, are given as to the nature, standard, accuracy or \n              otherwise of the information provided in this website nor to the \n              suitability or otherwise of the information to your particular \n              circumstances.\n            '
           ),
-          React$1.createElement(
+          React.createElement(
             'p',
             null,
-            'None of the authors shall be liable for any loss or damage of whatever nature (direct, indirect, consequential, or other) whether arising in contract, tort or otherwise, which may arise as a result of your use of (or inability to use) this website, or from your use of (or failure to use) the information on this site.'
+            '\n              None of the authors shall be liable for any loss or damage of \n              whatever nature (direct, indirect, consequential, or other) \n              whether arising in contract, tort or otherwise, which may arise \n              as a result of your use of (or inability to use) this website, or \n              from your use of (or failure to use) the information on this site.\n            '
           )
         );
       }
     }]);
 
     return LegalTermsDisclaimer;
-  }(React$1.Component);
+  }(React.Component);
 
   var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -295,20 +295,29 @@
       code: /^( {4}[^\n]+\n*)+/,
       fences: noop,
       hr: /^ {0,3}((?:- *){3,}|(?:_ *){3,}|(?:\* *){3,})(?:\n+|$)/,
-      heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,
+      heading: /^ *(#{1,6}) *([^\n]+?) *(?:#+ *)?(?:\n+|$)/,
       nptable: noop,
       blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
       list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
-      html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
+      html: '^ {0,3}(?:' // optional indentation
+      + '<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)' // (1)
+      + '|comment[^\\n]*(\\n+|$)' // (2)
+      + '|<\\?[\\s\\S]*?\\?>\\n*' // (3)
+      + '|<![A-Z][\\s\\S]*?>\\n*' // (4)
+      + '|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>\\n*' // (5)
+      + '|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)' // (6)
+      + '|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=\\h*\\n)[\\s\\S]*?(?:\\n{2,}|$)' // (7) open tag
+      + '|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=\\h*\\n)[\\s\\S]*?(?:\\n{2,}|$)' // (7) closing tag
+      + ')',
       def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/,
       table: noop,
       lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
-      paragraph: /^([^\n]+(?:\n?(?!hr|heading|lheading| {0,3}>|tag)[^\n]+)+)/,
+      paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading| {0,3}>|<\/?(?:tag)(?: +|\n|\/?>)|<(?:script|pre|style|!--))[^\n]+)*)/,
       text: /^[^\n]+/
     };
 
-    block._label = /(?:\\[\[\]]|[^\[\]])+/;
-    block._title = /(?:"(?:\\"|[^"]|"[^"\n]*")*"|'\n?(?:[^'\n]+\n?)*'|\([^()]*\))/;
+    block._label = /(?!\s*\])(?:\\[\[\]]|[^\[\]])+/;
+    block._title = /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;
     block.def = edit(block.def).replace('label', block._label).replace('title', block._title).getRegex();
 
     block.bullet = /(?:[*+-]|\d+\.)/;
@@ -317,11 +326,12 @@
 
     block.list = edit(block.list).replace(/bull/g, block.bullet).replace('hr', '\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))').replace('def', '\\n+(?=' + block.def.source + ')').getRegex();
 
-    block._tag = '(?!(?:' + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code' + '|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo' + '|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b';
+    block._tag = 'address|article|aside|base|basefont|blockquote|body|caption' + '|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption' + '|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe' + '|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option' + '|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr' + '|track|ul';
+    block._comment = /<!--(?!-?>)[\s\S]*?-->/;
+    block.html = edit(block.html, 'i').replace('comment', block._comment).replace('tag', block._tag).replace('attribute', / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
 
-    block.html = edit(block.html).replace('comment', /<!--[\s\S]*?-->/).replace('closed', /<(tag)[\s\S]+?<\/\1>/).replace('closing', /<tag(?:"[^"]*"|'[^']*'|\s[^'"\/>\s]*)*?\/?>/).replace(/tag/g, block._tag).getRegex();
-
-    block.paragraph = edit(block.paragraph).replace('hr', block.hr).replace('heading', block.heading).replace('lheading', block.lheading).replace('tag', '<' + block._tag).getRegex();
+    block.paragraph = edit(block.paragraph).replace('hr', block.hr).replace('heading', block.heading).replace('lheading', block.lheading).replace('tag', block._tag) // pars can be interrupted by type (6) html blocks
+    .getRegex();
 
     block.blockquote = edit(block.blockquote).replace('paragraph', block.paragraph).getRegex();
 
@@ -348,8 +358,18 @@
      */
 
     block.tables = merge({}, block.gfm, {
-      nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,
-      table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)\n*/
+      nptable: /^ *([^|\n ].*\|.*)\n *([-:]+ *\|[-| :]*)(?:\n((?:.*[^>\n ].*(?:\n|$))*)\n*|$)/,
+      table: /^ *\|(.+)\n *\|?( *[-:]+[-| :]*)(?:\n((?: *[^>\n ].*(?:\n|$))*)\n*|$)/
+    });
+
+    /**
+     * Pedantic grammar
+     */
+
+    block.pedantic = merge({}, block.normal, {
+      html: edit('^ *(?:comment *(?:\\n|\\s*$)' + '|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)' // closed tag
+      + '|<tag(?:"[^"]*"|\'[^\']*\'|\\s[^\'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))').replace('comment', block._comment).replace(/tag/g, '(?!(?:' + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub' + '|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)' + '\\b)\\w+(?!:|[^\\w\\s@]*@)\\b').getRegex(),
+      def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/
     });
 
     /**
@@ -362,7 +382,9 @@
       this.options = options || marked.defaults;
       this.rules = block.normal;
 
-      if (this.options.gfm) {
+      if (this.options.pedantic) {
+        this.rules = block.pedantic;
+      } else if (this.options.gfm) {
         if (this.options.tables) {
           this.rules = block.tables;
         } else {
@@ -402,7 +424,7 @@
 
     Lexer.prototype.token = function (src, top) {
       src = src.replace(/^ +$/gm, '');
-      var next, loose, cap, bull, b, item, space, i, tag, l, isordered;
+      var next, loose, cap, bull, b, item, space, i, tag, l, isordered, istask, ischecked;
 
       while (src) {
         // newline
@@ -450,34 +472,36 @@
 
         // table no leading pipe (gfm)
         if (top && (cap = this.rules.nptable.exec(src))) {
-          src = src.substring(cap[0].length);
-
           item = {
             type: 'table',
-            header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+            header: splitCells(cap[1].replace(/^ *| *\| *$/g, '')),
             align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
-            cells: cap[3].replace(/\n$/, '').split('\n')
+            cells: cap[3] ? cap[3].replace(/\n$/, '').split('\n') : []
           };
 
-          for (i = 0; i < item.align.length; i++) {
-            if (/^ *-+: *$/.test(item.align[i])) {
-              item.align[i] = 'right';
-            } else if (/^ *:-+: *$/.test(item.align[i])) {
-              item.align[i] = 'center';
-            } else if (/^ *:-+ *$/.test(item.align[i])) {
-              item.align[i] = 'left';
-            } else {
-              item.align[i] = null;
+          if (item.header.length === item.align.length) {
+            src = src.substring(cap[0].length);
+
+            for (i = 0; i < item.align.length; i++) {
+              if (/^ *-+: *$/.test(item.align[i])) {
+                item.align[i] = 'right';
+              } else if (/^ *:-+: *$/.test(item.align[i])) {
+                item.align[i] = 'center';
+              } else if (/^ *:-+ *$/.test(item.align[i])) {
+                item.align[i] = 'left';
+              } else {
+                item.align[i] = null;
+              }
             }
+
+            for (i = 0; i < item.cells.length; i++) {
+              item.cells[i] = splitCells(item.cells[i], item.header.length);
+            }
+
+            this.tokens.push(item);
+
+            continue;
           }
-
-          for (i = 0; i < item.cells.length; i++) {
-            item.cells[i] = item.cells[i].split(/ *\| */);
-          }
-
-          this.tokens.push(item);
-
-          continue;
         }
 
         // hr
@@ -564,8 +588,18 @@
               if (!loose) loose = next;
             }
 
+            // Check for task list items
+            istask = /^\[[ xX]\] /.test(item);
+            ischecked = undefined;
+            if (istask) {
+              ischecked = item[1] !== ' ';
+              item = item.replace(/^\[[ xX]\] +/, '');
+            }
+
             this.tokens.push({
-              type: loose ? 'loose_item_start' : 'list_item_start'
+              type: loose ? 'loose_item_start' : 'list_item_start',
+              task: istask,
+              checked: ischecked
             });
 
             // Recurse.
@@ -598,7 +632,7 @@
         if (top && (cap = this.rules.def.exec(src))) {
           src = src.substring(cap[0].length);
           if (cap[3]) cap[3] = cap[3].substring(1, cap[3].length - 1);
-          tag = cap[1].toLowerCase();
+          tag = cap[1].toLowerCase().replace(/\s+/g, ' ');
           if (!this.tokens.links[tag]) {
             this.tokens.links[tag] = {
               href: cap[2],
@@ -610,34 +644,36 @@
 
         // table (gfm)
         if (top && (cap = this.rules.table.exec(src))) {
-          src = src.substring(cap[0].length);
-
           item = {
             type: 'table',
-            header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+            header: splitCells(cap[1].replace(/^ *| *\| *$/g, '')),
             align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
-            cells: cap[3].replace(/(?: *\| *)?\n$/, '').split('\n')
+            cells: cap[3] ? cap[3].replace(/(?: *\| *)?\n$/, '').split('\n') : []
           };
 
-          for (i = 0; i < item.align.length; i++) {
-            if (/^ *-+: *$/.test(item.align[i])) {
-              item.align[i] = 'right';
-            } else if (/^ *:-+: *$/.test(item.align[i])) {
-              item.align[i] = 'center';
-            } else if (/^ *:-+ *$/.test(item.align[i])) {
-              item.align[i] = 'left';
-            } else {
-              item.align[i] = null;
+          if (item.header.length === item.align.length) {
+            src = src.substring(cap[0].length);
+
+            for (i = 0; i < item.align.length; i++) {
+              if (/^ *-+: *$/.test(item.align[i])) {
+                item.align[i] = 'right';
+              } else if (/^ *:-+: *$/.test(item.align[i])) {
+                item.align[i] = 'center';
+              } else if (/^ *:-+ *$/.test(item.align[i])) {
+                item.align[i] = 'left';
+              } else {
+                item.align[i] = null;
+              }
             }
+
+            for (i = 0; i < item.cells.length; i++) {
+              item.cells[i] = splitCells(item.cells[i].replace(/^ *\| *| *\| *$/g, ''), item.header.length);
+            }
+
+            this.tokens.push(item);
+
+            continue;
           }
-
-          for (i = 0; i < item.cells.length; i++) {
-            item.cells[i] = item.cells[i].replace(/^ *\| *| *\| *$/g, '').split(/ *\| */);
-          }
-
-          this.tokens.push(item);
-
-          continue;
         }
 
         // lheading
@@ -685,32 +721,42 @@
      */
 
     var inline = {
-      escape: /^\\([\\`*{}\[\]()#+\-.!_>])/,
+      escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
       autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
       url: noop,
-      tag: /^<!--[\s\S]*?-->|^<\/?[a-zA-Z0-9\-]+(?:"[^"]*"|'[^']*'|\s[^<'">\/\s]*)*?\/?>/,
-      link: /^!?\[(inside)\]\(href\)/,
-      reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
-      nolink: /^!?\[((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\]/,
-      strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
-      em: /^_([^\s_](?:[^_]|__)+?[^\s_])_\b|^\*((?:\*\*|[^*])+?)\*(?!\*)/,
+      tag: '^comment' + '|^</[a-zA-Z][\\w:-]*\\s*>' // self-closing tag
+      + '|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>' // open tag
+      + '|^<\\?[\\s\\S]*?\\?>' // processing instruction, e.g. <?php ?>
+      + '|^<![a-zA-Z]+\\s[\\s\\S]*?>' // declaration, e.g. <!DOCTYPE html>
+      + '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>', // CDATA section
+      link: /^!?\[(label)\]\(href(?:\s+(title))?\s*\)/,
+      reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
+      nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
+      strong: /^__([^\s][\s\S]*?[^\s])__(?!_)|^\*\*([^\s][\s\S]*?[^\s])\*\*(?!\*)|^__([^\s])__(?!_)|^\*\*([^\s])\*\*(?!\*)/,
+      em: /^_([^\s][\s\S]*?[^\s_])_(?!_)|^_([^\s_][\s\S]*?[^\s])_(?!_)|^\*([^\s][\s\S]*?[^\s*])\*(?!\*)|^\*([^\s*][\s\S]*?[^\s])\*(?!\*)|^_([^\s_])_(?!_)|^\*([^\s*])\*(?!\*)/,
       code: /^(`+)\s*([\s\S]*?[^`]?)\s*\1(?!`)/,
       br: /^ {2,}\n(?!\s*$)/,
       del: noop,
       text: /^[\s\S]+?(?=[\\<!\[`*]|\b_| {2,}\n|$)/
     };
 
+    inline._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;
+
     inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
     inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
-
     inline.autolink = edit(inline.autolink).replace('scheme', inline._scheme).replace('email', inline._email).getRegex();
 
-    inline._inside = /(?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]]|\](?=[^\[]*\]))*/;
-    inline._href = /\s*<?([\s\S]*?)>?(?:\s+['"]([\s\S]*?)['"])?\s*/;
+    inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
 
-    inline.link = edit(inline.link).replace('inside', inline._inside).replace('href', inline._href).getRegex();
+    inline.tag = edit(inline.tag).replace('comment', block._comment).replace('attribute', inline._attribute).getRegex();
 
-    inline.reflink = edit(inline.reflink).replace('inside', inline._inside).getRegex();
+    inline._label = /(?:\[[^\[\]]*\]|\\[\[\]]?|`[^`]*`|[^\[\]\\])*?/;
+    inline._href = /\s*(<(?:\\[<>]?|[^\s<>\\])*>|(?:\\[()]?|\([^\s\x00-\x1f()\\]*\)|[^\s\x00-\x1f()\\])*?)/;
+    inline._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;
+
+    inline.link = edit(inline.link).replace('label', inline._label).replace('href', inline._href).replace('title', inline._title).getRegex();
+
+    inline.reflink = edit(inline.reflink).replace('label', inline._label).getRegex();
 
     /**
      * Normal Inline Grammar
@@ -724,7 +770,9 @@
 
     inline.pedantic = merge({}, inline.normal, {
       strong: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
-      em: /^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/
+      em: /^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/,
+      link: edit(/^!?\[(label)\]\((.*?)\)/).replace('label', inline._label).getRegex(),
+      reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace('label', inline._label).getRegex()
     });
 
     /**
@@ -763,14 +811,14 @@
         throw new Error('Tokens array requires a `links` property.');
       }
 
-      if (this.options.gfm) {
+      if (this.options.pedantic) {
+        this.rules = inline.pedantic;
+      } else if (this.options.gfm) {
         if (this.options.breaks) {
           this.rules = inline.breaks;
         } else {
           this.rules = inline.gfm;
         }
-      } else if (this.options.pedantic) {
-        this.rules = inline.pedantic;
       }
     }
 
@@ -798,6 +846,7 @@
           link,
           text,
           href,
+          title,
           cap;
 
       while (src) {
@@ -857,9 +906,23 @@
         if (cap = this.rules.link.exec(src)) {
           src = src.substring(cap[0].length);
           this.inLink = true;
+          href = cap[2];
+          if (this.options.pedantic) {
+            link = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
+
+            if (link) {
+              href = link[1];
+              title = link[3];
+            } else {
+              title = '';
+            }
+          } else {
+            title = cap[3] ? cap[3].slice(1, -1) : '';
+          }
+          href = href.trim().replace(/^<([\s\S]*)>$/, '$1');
           out += this.outputLink(cap, {
-            href: cap[2],
-            title: cap[3]
+            href: InlineLexer.escapes(href),
+            title: InlineLexer.escapes(title)
           });
           this.inLink = false;
           continue;
@@ -884,14 +947,14 @@
         // strong
         if (cap = this.rules.strong.exec(src)) {
           src = src.substring(cap[0].length);
-          out += this.renderer.strong(this.output(cap[2] || cap[1]));
+          out += this.renderer.strong(this.output(cap[4] || cap[3] || cap[2] || cap[1]));
           continue;
         }
 
         // em
         if (cap = this.rules.em.exec(src)) {
           src = src.substring(cap[0].length);
-          out += this.renderer.em(this.output(cap[2] || cap[1]));
+          out += this.renderer.em(this.output(cap[6] || cap[5] || cap[4] || cap[3] || cap[2] || cap[1]));
           continue;
         }
 
@@ -931,12 +994,16 @@
       return out;
     };
 
+    InlineLexer.escapes = function (text) {
+      return text ? text.replace(InlineLexer.rules._escapes, '$1') : text;
+    };
+
     /**
      * Compile Link
      */
 
     InlineLexer.prototype.outputLink = function (cap, link) {
-      var href = escape(link.href),
+      var href = link.href,
           title = link.title ? escape(link.title) : null;
 
       return cap[0].charAt(0) !== '!' ? this.renderer.link(href, title, this.output(cap[1])) : this.renderer.image(href, title, escape(cap[1]));
@@ -992,7 +1059,7 @@
      */
 
     function Renderer(options) {
-      this.options = options || {};
+      this.options = options || marked.defaults;
     }
 
     Renderer.prototype.code = function (code, lang, escaped) {
@@ -1005,10 +1072,10 @@
       }
 
       if (!lang) {
-        return '<pre><code>' + (escaped ? code : escape(code, true)) + '\n</code></pre>';
+        return '<pre><code>' + (escaped ? code : escape(code, true)) + '</code></pre>';
       }
 
-      return '<pre><code class="' + this.options.langPrefix + escape(lang, true) + '">' + (escaped ? code : escape(code, true)) + '\n</code></pre>\n';
+      return '<pre><code class="' + this.options.langPrefix + escape(lang, true) + '">' + (escaped ? code : escape(code, true)) + '</code></pre>\n';
     };
 
     Renderer.prototype.blockquote = function (quote) {
@@ -1020,7 +1087,11 @@
     };
 
     Renderer.prototype.heading = function (text, level, raw) {
-      return '<h' + level + ' id="' + this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, '-') + '">' + text + '</h' + level + '>\n';
+      if (this.options.headerIds) {
+        return '<h' + level + ' id="' + this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, '-') + '">' + text + '</h' + level + '>\n';
+      }
+      // ignore IDs
+      return '<h' + level + '>' + text + '</h' + level + '>\n';
     };
 
     Renderer.prototype.hr = function () {
@@ -1037,12 +1108,18 @@
       return '<li>' + text + '</li>\n';
     };
 
+    Renderer.prototype.checkbox = function (checked) {
+      return '<input ' + (checked ? 'checked="" ' : '') + 'disabled="" type="checkbox"' + (this.options.xhtml ? ' /' : '') + '> ';
+    };
+
     Renderer.prototype.paragraph = function (text) {
       return '<p>' + text + '</p>\n';
     };
 
     Renderer.prototype.table = function (header, body) {
-      return '<table>\n' + '<thead>\n' + header + '</thead>\n' + '<tbody>\n' + body + '</tbody>\n' + '</table>\n';
+      if (body) body = '<tbody>' + body + '</tbody>';
+
+      return '<table>\n' + '<thead>\n' + header + '</thead>\n' + body + '</table>\n';
     };
 
     Renderer.prototype.tablerow = function (content) {
@@ -1051,7 +1128,7 @@
 
     Renderer.prototype.tablecell = function (content, flags) {
       var type = flags.header ? 'th' : 'td';
-      var tag = flags.align ? '<' + type + ' style="text-align:' + flags.align + '">' : '<' + type + '>';
+      var tag = flags.align ? '<' + type + ' align="' + flags.align + '">' : '<' + type + '>';
       return tag + content + '</' + type + '>\n';
     };
 
@@ -1090,7 +1167,12 @@
       if (this.options.baseUrl && !originIndependentUrl.test(href)) {
         href = resolveUrl(this.options.baseUrl, href);
       }
-      var out = '<a href="' + href + '"';
+      try {
+        href = encodeURI(href).replace(/%25/g, '%');
+      } catch (e) {
+        return text;
+      }
+      var out = '<a href="' + escape(href) + '"';
       if (title) {
         out += ' title="' + title + '"';
       }
@@ -1281,6 +1363,10 @@
           {
             body = '';
 
+            if (this.token.task) {
+              body += this.renderer.checkbox(this.token.checked);
+            }
+
             while (this.next().type !== 'list_item_end') {
               body += this.token.type === 'text' ? this.parseText() : this.tok();
             }
@@ -1299,8 +1385,8 @@
           }
         case 'html':
           {
-            var html = !this.token.pre && !this.options.pedantic ? this.inline.output(this.token.text) : this.token.text;
-            return this.renderer.html(html);
+            // TODO parse inline content if parameter markdown=1
+            return this.renderer.html(this.token.text);
           }
         case 'paragraph':
           {
@@ -1334,7 +1420,7 @@
     }
 
     function edit(regex, opt) {
-      regex = regex.source;
+      regex = regex.source || regex;
       opt = opt || '';
       return {
         replace: function replace(name, val) {
@@ -1391,6 +1477,24 @@
       }
 
       return obj;
+    }
+
+    function splitCells(tableRow, count) {
+      var cells = tableRow.replace(/([^\\])\|/g, '$1 |').split(/ +\| */),
+          i = 0;
+
+      if (cells.length > count) {
+        cells.splice(count);
+      } else {
+        while (cells.length < count) {
+          cells.push('');
+        }
+      }
+
+      for (; i < cells.length; i++) {
+        cells[i] = cells[i].replace(/\\\|/g, '|');
+      }
+      return cells;
     }
 
     /**
@@ -1494,24 +1598,29 @@
       return marked;
     };
 
-    marked.defaults = {
-      gfm: true,
-      tables: true,
-      breaks: false,
-      pedantic: false,
-      sanitize: false,
-      sanitizer: null,
-      mangle: true,
-      smartLists: false,
-      silent: false,
-      highlight: null,
-      langPrefix: 'lang-',
-      smartypants: false,
-      headerPrefix: '',
-      renderer: new Renderer(),
-      xhtml: false,
-      baseUrl: null
+    marked.getDefaults = function () {
+      return {
+        baseUrl: null,
+        breaks: false,
+        gfm: true,
+        headerIds: true,
+        headerPrefix: '',
+        highlight: null,
+        langPrefix: 'language-',
+        mangle: true,
+        pedantic: false,
+        renderer: new Renderer(),
+        sanitize: false,
+        sanitizer: null,
+        silent: false,
+        smartLists: false,
+        smartypants: false,
+        tables: true,
+        xhtml: false
+      };
     };
+
+    marked.defaults = marked.getDefaults();
 
     /**
      * Expose
@@ -1533,10 +1642,6 @@
 
     if ((_typeof(exports)) === 'object') {
       module.exports = marked;
-    } else if (typeof undefined === 'function' && undefined.amd) {
-      undefined(function () {
-        return marked;
-      });
     } else {
       root.marked = marked;
     }
@@ -1562,6 +1667,8 @@
     _createClass$4(Editor, [{
       key: 'initDOM',
       value: function initDOM() {
+        var _this = this;
+
         var els = this.el.querySelectorAll('[data-code]');
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -1572,10 +1679,12 @@
             var el = _step.value;
 
             el.className = 'editable';
+
             var split = el.getAttribute('data-code').split('|');
             var code = split[0];
             el.setAttribute('data-code', code);
             split.shift();
+
             var options = {};
             for (var i = 0; i < split.length; i++) {
               var opt = split[i].split(':');
@@ -1583,11 +1692,14 @@
                 options[opt[0]] = opt[1] || true;
               }
             }
+
             var span = document.createElement('span');
             span.innerHTML = code.replace('\n', '<br>');
             span.setAttribute('contenteditable', true);
+
             el.innerHTML = '';
             el.appendChild(span);
+
             if (!this.values[code]) {
               this.values[code] = {
                 value: code,
@@ -1600,16 +1712,17 @@
             if (this.values[code].options.type) {
               span.setAttribute('type', this.values[code].options.type);
             }
-            span.addEventListener('focus', function (event) {
+
+            span.addEventListener('focus', function () {
               setTimeout(function () {
                 document.execCommand('selectAll', false, null);
               }, 40);
-            }.bind(span));
-            span.addEventListener('input', function (code) {
+            });
+            span.addEventListener('input', function (inputCode) {
               return function (event) {
-                this.handleChange(code, event.target.innerHTML);
-              }.bind(this);
-            }.bind(this)(code));
+                _this.handleChange(inputCode, event.target.innerHTML);
+              };
+            }(code));
           }
         } catch (err) {
           _didIteratorError = true;
@@ -1654,6 +1767,7 @@
             } else if (!edited && (' ' + el.className + ' ').indexOf(' editable--edited ') >= 0) {
               el.className = (' ' + el.className + ' ').replace(' editable--edited ', ' ').replace(/\s\s+/g, ' ');
             }
+
             var span = el.querySelector('span');
             if (span) {
               if (span.innerHTML !== this.values[code].value) {
@@ -1697,13 +1811,7 @@
     function Template() {
       _classCallCheck$5(this, Template);
 
-      var _this = _possibleConstructorReturn$4(this, (Template.__proto__ || Object.getPrototypeOf(Template)).call(this));
-
-      _this.state = {
-        value: "URL",
-        values: {}
-      };
-      return _this;
+      return _possibleConstructorReturn$4(this, (Template.__proto__ || Object.getPrototypeOf(Template)).apply(this, arguments));
     }
 
     _createClass$5(Template, [{
@@ -1713,49 +1821,49 @@
         templatesIncrementId++;
       }
     }, {
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        this.edito = new Editor(this.props.content, document.getElementById(this.id));
+      }
+    }, {
       key: 'render',
       value: function render() {
-        return React$1.createElement(
+        return React.createElement(
           'div',
           null,
-          React$1.createElement(
+          React.createElement(
             'h1',
             null,
-            'Template of: ',
+            'Template of:',
             this.props.name
           ),
-          React$1.createElement(
+          React.createElement(
             'p',
             { className: 'description' },
             this.props.description
           ),
-          React$1.createElement(
+          React.createElement(
             'nav',
             { className: 'nav' },
-            React$1.createElement(
+            React.createElement(
               reactRouterDom.Link,
               { to: '/' },
               'Return to home'
             ),
-            React$1.createElement('span', { className: 'hr' }),
-            React$1.createElement(
+            React.createElement('span', { className: 'hr' }),
+            React.createElement(
               'a',
               { href: 'https://github.com/dimitrinicolas/legal-terms#contributing' },
               'Contribute on Github'
             )
           ),
-          React$1.createElement('div', { id: this.id, className: 'page markdown-body' })
+          React.createElement('div', { id: this.id, className: 'page markdown-body' })
         );
-      }
-    }, {
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        new Editor(this.props.content, document.getElementById(this.id));
       }
     }]);
 
     return Template;
-  }(React$1.Component);
+  }(React.Component);
 
   var _createClass$6 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1777,18 +1885,18 @@
     _createClass$6(Page404, [{
       key: 'render',
       value: function render() {
-        return React$1.createElement(
+        return React.createElement(
           'div',
           null,
-          React$1.createElement(
+          React.createElement(
             'h1',
             null,
             'Page introuvable'
           ),
-          React$1.createElement(
+          React.createElement(
             'nav',
             { className: 'nav' },
-            React$1.createElement(
+            React.createElement(
               reactRouterDom.Link,
               { to: '/' },
               'Return to home'
@@ -1799,13 +1907,13 @@
     }]);
 
     return Page404;
-  }(React$1.Component);
+  }(React.Component);
 
-  var siteVitrineSociete = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : {{URL (exemple.fr)|type:url}} les informations suivantes :\n\n### Informations légales\n\nSociété : {{Nom de la société}}  \nStatut : {{Statut (ex : SAS au capital de ...)}}  \nAdresse : {{Adresse de l'établissement ou du siège social}}  \nContact : {{Adresse e-mail et numéro de téléphone}}  \nSIRET :  {{SIRET|type:number}}  \nRCS : {{RCS si l'entreprise a une activité commerciale}}  \nNuméro de TVA : {{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  \nRM : {{RM si l'entreprise a une activité artisanale}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et son adresse}}\n\n## Description des services fournis\n\nLe site {{URL (exemple.fr)}} a pour objet de fournir une information concernant l’ensemble des activités de la société.\n\nLe proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.\n\nTous les informations proposées sur le site {{URL (exemple.fr)}} sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site {{URL (exemple.fr)}}, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Les données obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles.\n";
+  var siteVitrineSociete = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du \n21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous \nportons à la connaissance des utilisateurs et visiteurs du site : \n{{URL (exemple.fr)|type:url}} les informations suivantes :\n\n### Informations légales\n\nSociété : {{Nom de la société}}  \nStatut : {{Statut (ex : SAS au capital de ...)}}  \nAdresse : {{Adresse de l'établissement ou du siège social}}  \nContact : {{Adresse e-mail et numéro de téléphone}}  \nSIRET :  {{SIRET|type:number}}  \nRCS : {{RCS si l'entreprise a une activité commerciale}}  \nNuméro de TVA : \n{{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  \nRM : {{RM si l'entreprise a une activité artisanale}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et son adresse}}\n\n## Description des services fournis\n\nLe site {{URL (exemple.fr)}} a pour objet de fournir une information concernant \nl’ensemble des activités de la société.\n\nLe proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} \ndes informations aussi précises que possible. Toutefois, il ne pourra être \ntenue responsable des omissions, des inexactitudes et des carences dans la mise \nà jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui \nfournissent ces informations.\n\nTous les informations proposées sur le site {{URL (exemple.fr)}} sont données à \ntitre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles \nsont données sous réserve de modifications ayant été apportées depuis leur mise \nen ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle \nou détient les droits d’usage sur tous les éléments accessibles sur le site, \nnotamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation \ntotale ou partielle des éléments du site, quel que soit le moyen ou le procédé \nutilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site \n{{URL (exemple.fr)}}, un ou des cookies sont susceptible de s’installer \nautomatiquement sur son ordinateur. Les données obtenues visent à faciliter la \nnavigation ultérieure sur le site, et ont également vocation à permettre \ndiverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations \npersonnelles dans le respect de la vie privée conformément à la loi n°78-17 du \n6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, \nl'utilisateur dispose d'un droit d'accès, de rectification, de suppression et \nd'opposition de ses données personnelles.\n";
 
-  var siteVitrineIndividuelle = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : {{URL (exemple.fr)|type:url}} les informations suivantes :\n\n### Informations légales\n\n{{Nom et prénom}}  \nAdresse : {{Adresse du domicile}}  \nAdresse e-mail : {{Adresse e-mail|type:email}}  \nTéléphone :  {{numéro de téléphone|type:tel}}  \nRCS : {{RCS si l'entreprise a une activité commerciale}}  \nNuméro de TVA : {{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  \nRM : {{RM si l'entreprise a une activité artisanale}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et son adresse}}\n\n## Description des services fournis\n\nLe site {{URL (exemple.fr)}} a pour objet de fournir une information concernant l’ensemble des activités de la société.\n\nLe proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.\n\nTous les informations proposées sur le site {{URL (exemple.fr)}} sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site {{URL (exemple.fr)}}, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Les données obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles.\n";
+  var siteVitrineIndividuelle = "# Mentions légales\n\nConformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du \n21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous \nportons à la connaissance des utilisateurs et visiteurs du site : \n{{URL (exemple.fr)|type:url}} les informations suivantes :\n\n### Informations légales\n\n{{Nom et prénom}}  \nAdresse : {{Adresse du domicile}}  \nAdresse e-mail : {{Adresse e-mail|type:email}}  \nTéléphone :  {{numéro de téléphone|type:tel}}  \nRCS : {{RCS si l'entreprise a une activité commerciale}}  \nNuméro de TVA : \n{{Numéro de TVA intracommunautaire en cas d'activité commerciale}}  \nRM : {{RM si l'entreprise a une activité artisanale}}\n\nResponsable de la publication : {{Responsable de la publication}}  \nHébergeur du site : {{Hébergeur et son adresse}}\n\n## Description des services fournis\n\nLe site {{URL (exemple.fr)}} a pour objet de fournir une information concernant \nl’ensemble des activités de la société.\n\nLe proprietaire du site s’efforce de fournir sur le site {{URL (exemple.fr)}} \ndes informations aussi précises que possible. Toutefois, il ne pourra être \ntenue responsable des omissions, des inexactitudes et des carences dans la mise \nà jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui \nfournissent ces informations.\n\nTous les informations proposées sur le site {{URL (exemple.fr)}} sont données à \ntitre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles \nsont données sous réserve de modifications ayant été apportées depuis leur mise \nen ligne.\n\n## Propriété intellectuelle et contrefaçons\n\nLe proprietaire du site est propriétaire des droits de propriété intellectuelle \nou détient les droits d’usage sur tous les éléments accessibles sur le site, \nnotamment les textes, images, graphismes, logo, icônes, sons, logiciels...\nToute reproduction, représentation, modification, publication, adaptation \ntotale ou partielle des éléments du site, quel que soit le moyen ou le procédé \nutilisé, est interdite, sauf autorisation expresse.\n\n## Cookies\n\nL’utilisateur est informé que lors de ses visites sur le site \n{{URL (exemple.fr)}}, un ou des cookies sont susceptible de s’installer \nautomatiquement sur son ordinateur. Les données obtenues visent à faciliter la \nnavigation ultérieure sur le site, et ont également vocation à permettre \ndiverses mesures de fréquentation.\n\n## Données personnelles\n\nLe site assure à l'utilisateur une collecte et un traitement d'informations \npersonnelles dans le respect de la vie privée conformément à la loi n°78-17 du \n6 janvier 1978 relative à l'informatique, aux fichiers et aux libertées.\n\nEn vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, \nl'utilisateur dispose d'un droit d'accès, de rectification, de suppression et \nd'opposition de ses données personnelles.\n";
 
-  var cookiesBandeau = "### Cookies pour les statistiques de visites\n\n> En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour réaliser des statistiques de fréquentation.\n\n### Cookies pour les publicités\n\n> En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts.\n";
+  var cookiesBandeau = "### Cookies pour les statistiques de visites\n\n> En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de \n> cookies pour réaliser des statistiques de fréquentation.\n\n### Cookies pour les publicités\n\n> En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de \n> cookies pour vous proposer des publicités ciblées adaptés à vos centres \n> d’intérêts.\n";
 
   var fr = {
     code: 'fr',
@@ -1817,12 +1925,12 @@
       templates: [{
         code: 'site-vitrine-societe',
         name: 'Site vitrine d\'une société',
-        description: 'Mentions légales obligatoires pour le site vitrine d\'une société.',
+        description: '\n            Mentions l\xE9gales obligatoires pour le site vitrine d\'une soci\xE9t\xE9.\n          ',
         content: siteVitrineSociete
       }, {
         code: 'site-vitrine-individuelle',
         name: 'Site vitrine d\'une entreprise individuelle',
-        description: 'Mentions légales obligatoires pour le site vitrine d\'une entreprise individuelle (AE, EI, EIRL...).',
+        description: '\n            Mentions l\xE9gales obligatoires pour le site vitrine d\'une entreprise \n            individuelle (AE, EI, EIRL...).\n          ',
         content: siteVitrineIndividuelle
       }]
     }, {
@@ -1832,7 +1940,7 @@
       templates: [{
         code: 'bandeau',
         name: 'Bandeau ',
-        description: 'Lorsqu\'un site internet doit déposer des cookies traceurs sur les ordinateurs de ses utilisateur, l\'éditeur doit obligatoirement les informer de la finalité des cookies, obtenir leur consentement avant de les déposer et leurs permettre de les refuser.',
+        description: '\n            Lorsqu\'un site internet doit d\xE9poser des cookies traceurs sur les \n            ordinateurs de ses utilisateur, l\'\xE9diteur doit obligatoirement les \n            informer de la finalit\xE9 des cookies, obtenir leur consentement \n            avant de les d\xE9poser et leurs permettre de les refuser.\n          ',
         content: cookiesBandeau
       }]
     }]
@@ -1877,9 +1985,13 @@
           var categorie = _step2.value;
 
           var _loop = function _loop(template) {
-            templatesRoutes.push(React.createElement(reactRouterDom.Route, { key: '/' + lang.code + '/' + categorie.code + '/' + template.code, path: '/' + lang.code + '/' + categorie.code + '/' + template.code, component: function component() {
+            templatesRoutes.push(React.createElement(reactRouterDom.Route, {
+              key: '/' + lang.code + '/' + categorie.code + '/' + template.code,
+              path: '/' + lang.code + '/' + categorie.code + '/' + template.code,
+              component: function component() {
                 return React.createElement(Template, template);
-              } }));
+              }
+            }));
           };
 
           var _iteratorNormalCompletion3 = true;
@@ -1946,10 +2058,18 @@
       React.createElement(
         reactRouterDom.Switch,
         null,
-        React.createElement(reactRouterDom.Route, { exact: true, path: '/', component: function component() {
+        React.createElement(reactRouterDom.Route, {
+          exact: true,
+          path: '/',
+          component: function component() {
             return React.createElement(Home, { templates: templates });
-          } }),
-        React.createElement(reactRouterDom.Route, { exact: true, path: '/legal-terms-disclaimer', component: LegalTermsDisclaimer }),
+          }
+        }),
+        React.createElement(reactRouterDom.Route, {
+          exact: true,
+          path: '/legal-terms-disclaimer',
+          component: LegalTermsDisclaimer
+        }),
         templatesRoutes,
         React.createElement(reactRouterDom.Route, { component: Page404 })
       ),

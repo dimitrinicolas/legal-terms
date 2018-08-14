@@ -27,7 +27,7 @@ export default [
 			}),
       babel({
         presets: [
-					'react',
+          'react',
           [
             'env',
             { modules: false }

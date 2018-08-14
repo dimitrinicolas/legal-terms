@@ -1,6 +1,6 @@
 import privacyPolicy from './privacy-policy/privacy-policy.md';
 
-let en = {
+const en = {
   code: 'en',
   name: 'English',
   categories: [

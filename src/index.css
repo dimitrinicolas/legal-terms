@@ -63,7 +63,6 @@ p {
   background-color: white;
   line-height: 1.7;
   border: 1px solid #ebebeb;
-  /* box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, .1); */
 }
 @media (max-width: 600px) {
   .page {
@@ -100,8 +99,6 @@ p {
 .editable.editable--edited span {
   background: #fdf7f5;
 }
-.editable span::selection {
-}
 
 .loading-spinner {
   position: absolute;
@@ -114,8 +111,8 @@ p {
   animation: fadeIn 1s linear .4s 1 normal forwards;
 }
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .nav {

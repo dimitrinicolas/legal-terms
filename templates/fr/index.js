@@ -3,7 +3,7 @@ import siteVitrineIndividuelle from './mentions-legales/site-vitrine-individuell
 
 import cookiesBandeau from './cookies/bandeau.md';
 
-let fr = {
+const fr = {
   code: 'fr',
   name: 'Français',
   categories: [
@@ -15,13 +15,18 @@ let fr = {
         {
           code: 'site-vitrine-societe',
           name: 'Site vitrine d\'une société',
-          description: 'Mentions légales obligatoires pour le site vitrine d\'une société.',
+          description: `
+            Mentions légales obligatoires pour le site vitrine d'une société.
+          `,
           content: siteVitrineSociete
         },
         {
           code: 'site-vitrine-individuelle',
           name: 'Site vitrine d\'une entreprise individuelle',
-          description: 'Mentions légales obligatoires pour le site vitrine d\'une entreprise individuelle (AE, EI, EIRL...).',
+          description: `
+            Mentions légales obligatoires pour le site vitrine d'une entreprise 
+            individuelle (AE, EI, EIRL...).
+          `,
           content: siteVitrineIndividuelle
         }
       ]
@@ -34,7 +39,12 @@ let fr = {
         {
           code: 'bandeau',
           name: 'Bandeau ',
-          description: 'Lorsqu\'un site internet doit déposer des cookies traceurs sur les ordinateurs de ses utilisateur, l\'éditeur doit obligatoirement les informer de la finalité des cookies, obtenir leur consentement avant de les déposer et leurs permettre de les refuser.',
+          description: `
+            Lorsqu'un site internet doit déposer des cookies traceurs sur les 
+            ordinateurs de ses utilisateur, l'éditeur doit obligatoirement les 
+            informer de la finalité des cookies, obtenir leur consentement 
+            avant de les déposer et leurs permettre de les refuser.
+          `,
           content: cookiesBandeau
         }
       ]
